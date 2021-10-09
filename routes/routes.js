@@ -3,6 +3,16 @@ const path = require('path');
 const uuid = require('uuid');
 
 module.exports = app => {
+    app.get('/notes', (req, res) => {
+        console.log('Hit /notes route')
+        res.sendFile(path.join(__dirname, '../public/notes.html'))
+    });
+
+    app.get('/', (req, res) => {
+        console.log('Hit / route')
+        res.sendFile(path.join(__dirname, '../public/index.html'))
+    });
+
     // return all saved notes as json
     app.get('/api/notes', (req, res) => {
         console.log('Hit /api/notes route')
@@ -25,15 +35,12 @@ module.exports = app => {
             const createNew = JSON.stringify(notes);
             fs.writeFile(path.join(__dirname, '../db/db.json'), createNew, (err) => {
                 if (err) throw err;
-            })
+            });
             res.json(newNote);
-        })
+        });
     });
 
-    app.get('/notes', (req, res) => {
-        console.log('Hit /notes route')
-        res.sendFile(path.join(__dirname, '../public/notes.html'))
-    });
+    
 
     app.get('*', (req, res) => {
         console.log('Hit * route')
