@@ -10,6 +10,7 @@ const PORT = 3001;
 
 // parse
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '/js'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
