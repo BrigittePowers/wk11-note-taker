@@ -40,7 +40,7 @@
 
   Live demo can be viewed at: https://bp-express-note-taker.herokuapp.com/
 
-  ![example screenshot of note taker deployment](assets/example-notes.png)
+  ![example screenshot of note taker deployment](Assets/example-notes.png)
   
   ## Questions
 
