@@ -6,7 +6,7 @@ const uuid = require('uuid');
 
 // express
 const app = express();
-const port = process.env.PORT;
+var port = process.env.PORT;
 
 // parse
 app.use(express.static(path.join(__dirname, "public")));
