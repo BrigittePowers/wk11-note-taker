@@ -6,7 +6,7 @@ const uuid = require('uuid');
 
 // express
 const app = express();
-var port = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 // parse
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,9 +18,6 @@ app.use(express.json());
 require('./routes/routes')(app);
 
 // listening at port 
-if(port == null || port == "") {
-    port = 3001;
-}
-app.listen(port, () =>
-    console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () =>
+    console.log(`Example app listening at http://localhost:${PORT}`)
 );
